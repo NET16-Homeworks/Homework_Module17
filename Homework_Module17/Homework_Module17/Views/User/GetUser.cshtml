@@ -1,0 +1,9 @@
+﻿@model UserViewModel
+
+@{
+    ViewData["Title"] = "GetUser Page";
+}
+
+@await Component.InvokeAsync("GetUser")
+
+@Html.ActionLink("GoBack", "_GoBack")
