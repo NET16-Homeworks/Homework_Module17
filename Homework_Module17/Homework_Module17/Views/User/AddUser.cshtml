@@ -1,0 +1,27 @@
+﻿@model UserViewModel
+
+@{
+    ViewData["Title"] = "AddUser Page";
+}
+
+@using (@Html.BeginForm(FormMethod.Post)){
+    <p>
+        @Html.DisplayNameFor(user => user.Name)
+        @Html.TextBoxFor(user => user.Name)
+    </p>
+    <p>
+        @Html.DisplayNameFor(user => user.Sex)
+        @Html.DropDownListFor(user => user.Sex, Html.GetEnumSelectList(typeof(SexEnum)))
+    </p>
+    <p>
+        @Html.DisplayNameFor(user => user.Country)
+        @Html.DropDownListFor(user => user.Country, new SelectList(new List<string> {"Беларусь", "Польша", "Украина"}))
+    </p>
+    <p>
+        @Html.DisplayNameFor(user => user.IsMarried)
+        @Html.CheckBoxFor(user => user.IsMarried, false)
+    </p>
+    <button type="submit">Add</button>
+}
+
+@Html.Partial("_GoBack")

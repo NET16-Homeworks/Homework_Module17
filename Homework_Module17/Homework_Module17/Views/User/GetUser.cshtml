@@ -1,0 +1,9 @@
+﻿@model int
+
+@{
+    ViewData["Title"] = "GetUser Page";
+}
+
+@await Component.InvokeAsync("GetUser", Model)
+
+@Html.Partial("_GoBack")
