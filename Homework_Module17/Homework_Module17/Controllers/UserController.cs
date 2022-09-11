@@ -6,7 +6,6 @@ namespace Homework_Module17.Controllers
 {
     public class UserController : Controller
     {
-        //public static readonly UserService userService = new UserService();
         public IActionResult Index()
         {
             return View(UserService.GetUsers());
@@ -27,7 +26,7 @@ namespace Homework_Module17.Controllers
 
         public IActionResult GetUser(int index = 0)
         {
-            return View(UserService.GetUser(index));
+            return View(index);
         }
 
         [HttpGet]

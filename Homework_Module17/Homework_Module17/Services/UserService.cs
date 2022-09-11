@@ -4,7 +4,7 @@ namespace Homework_Module17.Services
 {
     public static class UserService
     {
-        private static List<UserViewModel> _users = new List<UserViewModel>();
+        private static readonly List<UserViewModel> _users = new List<UserViewModel>();
 
         public static List<UserViewModel> GetUsers()
         {

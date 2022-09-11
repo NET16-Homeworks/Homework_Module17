@@ -5,9 +5,9 @@ namespace Homework_Module17.ViewComponents
 {
     public class GetUserViewComponent : ViewComponent
     {
-        public IViewComponentResult Invoke()
+        public IViewComponentResult Invoke(int index)
         {
-            return View("GetUser", UserService.GetUser(0));
+            return View("GetUser", UserService.GetUser(index));
         }
     }
 }

@@ -1,9 +1,9 @@
-﻿@model UserViewModel
+﻿@model int
 
 @{
     ViewData["Title"] = "GetUser Page";
 }
 
-@await Component.InvokeAsync("GetUser")
+@await Component.InvokeAsync("GetUser", Model)
 
 @Html.Partial("_GoBack")
