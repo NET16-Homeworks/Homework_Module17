@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "DeleteUser Page";
+}
+
+@using (Html.BeginForm(FormMethod.Post))
+{
+    @Html.TextBox("index")
+    <button type="submit">Delete</button>
+}
+
+@Html.Partial("_GoBack")
