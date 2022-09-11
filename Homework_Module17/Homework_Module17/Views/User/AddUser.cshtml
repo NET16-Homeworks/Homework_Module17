@@ -1,0 +1,27 @@
+﻿@model UserViewModel
+
+<div>Add your own user!</div>
+
+@using (Html.BeginForm(FormMethod.Post))
+{
+    <p>
+        @Html.DisplayNameFor(user => user.Name)
+        <br>
+        @Html.TextBoxFor(user => user.Name)
+    </p>
+   
+    <p>
+        @Html.DropDownList("Sex", Html.GetEnumSelectList(typeof(sex)), "Select sex")
+    </p>
+
+    <p>
+        @Html.DropDownList("Country", new SelectList(new string[] { "Belarus","Poland","Ukraine" }), "Select country")
+    </p>
+
+    <p>
+        Is married? @Html.CheckBox("IsMarried", false)
+    </p>
+    <button type="submit">Add user!</button>
+}
+
+<p>@await Html.PartialAsync("_GoBack")</p>

@@ -1,0 +1,11 @@
+﻿<div>Enter id of user you want to delete</div>
+<br></br>
+
+@using (Html.BeginForm(FormMethod.Post))
+{
+        <p>Enter user id</p>
+        @Html.TextBox("id", "0", new {type="number"})
+        <button type="submit">Delete user!</button>
+}
+<br></br>
+<p>@await Html.PartialAsync("_GoBack")</p>
