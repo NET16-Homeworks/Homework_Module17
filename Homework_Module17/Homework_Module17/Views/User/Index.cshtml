@@ -1,0 +1,16 @@
+﻿@model List<UserViewModel>
+<ul>
+    @foreach(var user in Model)
+    {
+        <li>@("Name: " + user.Name + ", Sex: " + user.Sex + ", Country: " + user.Country + ", IsMarried: " + user.IsMarried)</li>
+    }
+</ul>
+<p>
+    @Html.ActionLink("Add User", "AddUser")
+</p>
+<p>
+    @Html.ActionLink("Get User", "GetUser")
+</p>
+<p>
+    @Html.ActionLink("Delete User", "DeleteUser")
+</p>
