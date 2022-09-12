@@ -1,0 +1,19 @@
+﻿@model UserViewModel
+@{
+    @using (Html.BeginForm(FormMethod.Post))
+    {
+        @Html.Label("Name: ")
+        @Html.TextBoxFor(user => user.Name) <br />
+        @Html.Label("Sex: ")
+        @Html.DropDownListFor(user => user.Sex, new SelectList(new string[]{"Man","Woman"}),"Enter sex") <br />
+        @Html.Label("Country: ")
+        @Html.DropDownListFor(user => user.Country, new SelectList(new string[]{"Poland", "Spain", "Belarus", "Ukraine", "Lithuania"}),"Enter users") <br />
+        @Html.Label("IsMarried ")
+        @Html.CheckBoxFor(user=>user.IsMarried,false) <br />
+        <button type="submit">Submit</button>
+    }
+}
+@Html.Partial("_GoBack")
+<p>
+    @Html.ActionLink("Delete User", "DeleteUser")
+</p>

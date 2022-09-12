@@ -1,0 +1,10 @@
+﻿@model int
+@using (Html.BeginForm(FormMethod.Post))
+{
+    @Html.Label("Index: ")
+    @Html.TextBox("Index")
+    <br />
+    <button type="submit">Submit</button>
+    
+    <p>@Html.Partial("_GoBack")</p>
+}
