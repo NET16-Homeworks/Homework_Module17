@@ -37,16 +37,5 @@ namespace Homework_Module17.Services
                 Console.WriteLine(ex.Message);
             }         
         }
-
-
-
-
-
-        
-
-
-
-
-
     }
 }

@@ -1,26 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Homework_Module17.Enums;
 
 namespace Homework_Module17.ViewModels
 {
-    public record class UserViewModel
+    public class UserViewModel
     {
         public string Name { get; set; }
-        public sex Sex { get; set; }
+        public Sex Sex { get; set; }
         public string Country { get; set; }
         public bool IsMarried { get; set; }
-
-
-
-        
     }
-
-    public enum sex
-    {
-        [Display(Name = "Male")]
-        male,
-        [Display(Name = "Female")]
-        female
-    }
-    
-    
 }

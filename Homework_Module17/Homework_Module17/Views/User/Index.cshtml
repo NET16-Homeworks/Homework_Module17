@@ -2,12 +2,10 @@
 
 <div>Users:</div>
 
-@{foreach (var user in Model)
+@foreach (var user in Model)
     {
         <li><p>Name: @user.Name</p><p>Country: @user.Country</p><p>Sex: @user.Sex</p><p>Is Married: @user.IsMarried</p></li>
     }
-}
-
 
 @Html.ActionLink("Add new user", "AddUser")
 <br></br>

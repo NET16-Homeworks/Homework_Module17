@@ -6,11 +6,12 @@ namespace Homework_Module17.Controllers
 {
     public class UserController : Controller
     {
-        UserService userService = new UserService();
+        private UserService userService = new UserService();
 
         public IActionResult Index()
         {
-            return View(userService.GetUsers());
+            List<UserViewModel> users = userService.GetUsers();
+            return View(users);
         }
 
         [HttpGet]
@@ -24,11 +25,6 @@ namespace Homework_Module17.Controllers
         {
             userService.AddUser(user);
             return RedirectToAction("Index");
-        }
-
-        public IActionResult _GoBack()
-        {
-            return PartialView();
         }
 
         public IActionResult GetUser(int id = 0)

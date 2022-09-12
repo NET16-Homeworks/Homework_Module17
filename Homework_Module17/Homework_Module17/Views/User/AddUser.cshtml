@@ -1,4 +1,7 @@
-﻿@model UserViewModel
+﻿@using Homework_Module17.Enums;
+
+
+@model UserViewModel
 
 <div>Add your own user!</div>
 
@@ -11,7 +14,7 @@
     </p>
    
     <p>
-        @Html.DropDownList("Sex", Html.GetEnumSelectList(typeof(sex)), "Select sex")
+        @Html.DropDownList("Sex", Html.GetEnumSelectList(typeof(Sex)), "Select sex")
     </p>
 
     <p>
