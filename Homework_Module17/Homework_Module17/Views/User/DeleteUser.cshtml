@@ -1,0 +1,8 @@
+﻿<h1>Delete User: </h1>
+
+@using(@Html.BeginForm()){
+    @Html.TextBox("userIndex")
+    <button type="submit">Delete</button>
+}
+
+@Html.Partial("_GoBack")

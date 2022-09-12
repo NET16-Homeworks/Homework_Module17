@@ -1,0 +1,5 @@
+﻿@model int
+
+@await Component.InvokeAsync("GetUser", Model)
+
+@Html.Partial("_GoBack")
