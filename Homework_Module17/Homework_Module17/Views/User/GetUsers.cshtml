@@ -1,0 +1,13 @@
+﻿@model List<UserViewModel>;
+
+<ul>
+    @foreach (var user in Model)
+    {
+        <li>
+            @("Name: " + user.Name
+                + " Sex: " + user.Sex
+                + " Country: " + user.Country
+                + " IsMarried: " + user.IsMarried)
+        </li>
+    }
+</ul>

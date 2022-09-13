@@ -1,0 +1,29 @@
+﻿@model UserViewModel
+
+@using (Html.BeginForm(FormMethod.Post))
+{
+    <p>
+        @Html.DisplayNameFor(user => user.Name)
+        <br>
+        @Html.TextBoxFor(user => user.Name)
+    </p>
+    <p>
+        @Html.DisplayNameFor(user => user.Sex)
+        <br>
+        @Html.DropDownListFor(user => user.Sex, Html.GetEnumSelectList<SexEnum>())
+    </p>
+    <p>
+        @Html.DisplayNameFor(user => user.Country)
+        <br>
+        @Html.DropDownListFor(user => user.Country, new SelectList(new List<string>{ "Belarus", "Ukrain", "Poland" }))
+    </p>
+    <p>
+        @Html.DisplayNameFor(user => user.IsMarried)
+        <br>
+        @Html.CheckBoxFor(user => user.IsMarried)
+    </p>
+
+    <button type="submit">Add</button>
+}
+
+@Html.Partial("_GoBack")
