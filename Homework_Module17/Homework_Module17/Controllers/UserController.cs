@@ -6,7 +6,7 @@ namespace Homework_Module17.Controllers
 {
     public class UserController : Controller
     {
-        UserService userService = new UserService();
+        private UserService userService = new UserService();
         public IActionResult Index()
         {
             return View(userService.GetUsers());
