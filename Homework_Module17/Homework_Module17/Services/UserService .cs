@@ -1,10 +1,12 @@
 ﻿using Homework_Module17.Models;
+using Homework_Module17.Enums;
+using Homework_Module17.Exceptions;
 
 namespace Homework_Module17.Services
 {
-    public static class UserService
+    public class UserService
     {
-        static List<UserViewModel> _users = new()
+        public static List<UserViewModel> _users = new()
         {
             new UserViewModel() { Name = "User1", Country = "Беларусь", IsMarried = true, Sex = UserSex.Male },
             new UserViewModel() { Name = "User2", Country = "США", IsMarried = false, Sex = UserSex.Female },
@@ -13,23 +15,35 @@ namespace Homework_Module17.Services
             new UserViewModel() { Name = "User5", Country = "Норвегия", IsMarried = true, Sex = UserSex.Male },
         };
 
-        public static List<UserViewModel> GetUsers()
+        public List<UserViewModel> GetUsers()
         {
             return _users;
         }
 
-        public static UserViewModel GetUser(int index)
+        public UserViewModel GetUser(int index)
         {
-            return _users[index];
+            var userByIndex = _users.ElementAt(index);
+            if (userByIndex == null)
+            {
+                throw new UserNotFoundException("User Not Found!");
+            }
+
+            return userByIndex;
         }
 
-        public static void AddUser(UserViewModel user)
+        public void AddUser(UserViewModel user)
         {
             _users.Add(user);
         }
 
-        public static void DeleteUser(int index)
+        public void DeleteUser(int index)
         {
+            var userByIndex = _users.ElementAt(index);
+            if (userByIndex == null)
+            {
+                throw new UserNotFoundException("User Not Found!");
+            }
+
             _users.RemoveAt(index);
         }
     }

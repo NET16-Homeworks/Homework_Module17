@@ -7,7 +7,8 @@ namespace Homework_Module17.ViewComponents
     {
         public IViewComponentResult Invoke(int index)
         {
-            return View("GetUser", UserService.GetUser(index));
+            var userService = new UserService();
+            return View("GetUser", userService.GetUser(index));
         }
     }
 }

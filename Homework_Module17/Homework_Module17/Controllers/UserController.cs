@@ -8,7 +8,9 @@ namespace Homework_Module17.Controllers
     {
         public IActionResult Index()
         {
-            return View(UserService.GetUsers());
+            var userService = new UserService();
+
+            return View(userService.GetUsers());
         }
 
         [HttpGet]
@@ -20,7 +22,8 @@ namespace Homework_Module17.Controllers
         [HttpPost]
         public IActionResult AddUser(UserViewModel user)
         {
-            UserService.AddUser(user);
+            var userService = new UserService();
+            userService.AddUser(user);
 
             return RedirectToAction("Index");
         }
@@ -40,7 +43,8 @@ namespace Homework_Module17.Controllers
         [HttpPost]
         public IActionResult DeleteUser(int userIndex)
         {
-            UserService.DeleteUser(userIndex);
+            var userService = new UserService();
+            userService.DeleteUser(userIndex);
 
             return RedirectToAction("Index");
         }
