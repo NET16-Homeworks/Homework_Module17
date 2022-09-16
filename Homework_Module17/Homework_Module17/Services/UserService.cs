@@ -37,7 +37,14 @@ namespace Homework_Module17.Services
         public UserViewModel GetUser(int index)
         {
             var user = _users[index];
-            return user;
+            if (index > _users.Count - 1)
+            {
+                throw new Exception("Empty list of users");
+            }
+            else
+            {
+                return user;
+            }
         }
 
         public void AddUser(UserViewModel user)
