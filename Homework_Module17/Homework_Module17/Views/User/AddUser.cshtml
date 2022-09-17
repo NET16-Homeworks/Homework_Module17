@@ -1,0 +1,29 @@
+﻿@using Homework_Module17.Enums
+
+@model UserViewModel;
+
+@using (@Html.BeginForm(FormMethod.Post))
+{
+    <h1>Add New User =) : </h1>
+
+    <p>
+        @Html.NameFor(user => user.Name):
+        @Html.TextBoxFor(user => user.Name)
+    </p>
+    <p>
+        @Html.NameFor(user => user.Sex):
+        @Html.DropDownListFor(user => user.Sex, Html.GetEnumSelectList<SexOfUser>())
+    </p>
+    <p>
+        @Html.NameFor(user => user.Country):
+        @Html.DropDownListFor(user => user.Country, new SelectList(new List<string>{ "Belarus", "Poland", "Ukraine" }))
+    </p>
+    <p>
+        @Html.NameFor(user => user.IsMarried):
+        @Html.CheckBoxFor(user => user.IsMarried)
+    </p>
+
+    <button type="SUBMIT">Add User</button>
+}
+
+@await Html.PartialAsync("RETURN")
