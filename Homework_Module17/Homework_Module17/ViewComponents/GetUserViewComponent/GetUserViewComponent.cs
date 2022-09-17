@@ -5,10 +5,11 @@ using Microsoft.AspNetCore.Mvc;
     {
         public class GetUserViewComponent : ViewComponent
         {
-            public IViewComponentResult Invoke(int index)
-            {
-                return View("GetUser", UserService.GetUser(index));
-            }
+        public IViewComponentResult Invoke(int index)
+        {
+            var userService = new UserService();
+            return View("GetUser", userService.GetUser(index));
         }
+    }
    }
 

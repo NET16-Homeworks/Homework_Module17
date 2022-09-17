@@ -1,32 +1,33 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Homework_Module17.Services;
 using Homework_Module17.Models;
-using Homework_Module17.Services;
+
 
 namespace Homework_Module17.Controllers
 {
     public class UserController : Controller
     {
-            public IActionResult Index()
-            {
-                return View(UserService.GetUsers());
-            }
+        private UserService userService = new UserService();
+        public IActionResult Index()
+        {
+            return View(userService.GetUsers());
+        }
 
-            [HttpGet]
+        [HttpGet]
             public IActionResult AddUser()
             {
                 return View();
             }
 
-            [HttpPost]
-            public IActionResult AddUser(UserViewModel user)
-            {
-                UserService.AddUser(user);
+        [HttpPost]
+        public IActionResult AddUser(UserViewModel user)
+        {
+            userService.AddUser(user);
 
-                return RedirectToAction("Index");
-            }
+            return RedirectToAction("Index");
+        }
 
-            public IActionResult GetUser(int index)
+        public IActionResult GetUser(int index)
             {
                 return View(index);
             }
@@ -38,12 +39,12 @@ namespace Homework_Module17.Controllers
                 return View();
             }
 
-            [HttpPost]
-            public IActionResult DeleteUser(int userIndex)
-            {
-                UserService.DeleteUser(userIndex);
+        [HttpPost]
+        public IActionResult DeleteUser(int userIndex)
+        {
+            userService.DeleteUser(userIndex);
 
-                return RedirectToAction("Index");
-            }
+            return RedirectToAction("Index");
         }
+    }
 }
