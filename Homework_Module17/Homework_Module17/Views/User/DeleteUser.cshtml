@@ -1,0 +1,14 @@
+﻿@model UserViewModel
+
+@using (Html.BeginForm(FormMethod.Post))
+{
+    <p>
+        @Html.Label("Index")
+        <br>
+        @Html.TextBox("index", "", new {type = "number"})
+    </p>
+
+    <button type="submit">Delete</button>
+}
+
+@Html.Partial("_GoBack")
