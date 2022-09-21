@@ -1,0 +1,15 @@
+﻿
+@model List<UserViewModel>
+
+@*
+        ViewBag.Title("GetUsers field");
+*@
+    <h4>GetUsers field</h4>
+
+ <ul>
+         @foreach(var user in Model)
+        {
+            <li>Username: @user.Name; Sex: @user.sex; Country: @user.Country; Married: @user.IsMarried</li>
+        }
+ </ul/>
+

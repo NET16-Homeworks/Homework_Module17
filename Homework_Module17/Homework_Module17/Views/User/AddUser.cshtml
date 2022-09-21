@@ -1,0 +1,44 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model UserViewModel
+
+@{
+    ViewBag.Title = "AddUser page";
+}
+<h4>The page for adding new user</h4>
+   @*
+       declaring the properties using textbox and dropdownlistfor:
+   *@
+
+       <form action='@Url.Action("AddUser")' method='POST'>
+   <p>
+        @Html.NameFor(q => q.Name):
+        @Html.TextBoxFor(q => q.Name)
+
+            @* what does string format change?
+            @Html.TextBoxFor(q => q.Name, "Names")
+            *@
+   </p>
+   @*
+        @Html.DropDownListFor(q => q.sex, Enum.GetNames(typeof(SexEnum.Sex)))
+   *@
+   <p>
+        @Html.NameFor(q => q.sex):
+        @Html.DropDownListFor(q => q.sex, Html.GetEnumSelectList(typeof(UserSex)))
+   </p>
+   <p>
+        @Html.NameFor(q => q.Country):
+        @Html.DropDownListFor(q => q.Country, new SelectList(new List<string> {"Belarus", "Poland", "Ukraine"}))<br/>
+   @*
+       можно было также создать лист во вью модел для каждой из стран и поместить лист сюда?
+   *@
+   </p>
+   <p>
+        @Html.NameFor(q => q.IsMarried):
+        @Html.CheckBoxFor(q => q.IsMarried)
+   </p>
+    <input type="submit" value = "Submit">
+        </form>
+
+    @await Html.PartialAsync("_GoBack")

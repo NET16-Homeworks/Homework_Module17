@@ -1,0 +1,19 @@
+﻿@model UserViewModel
+
+@{
+    ViewBag.Title = "Delete user";
+}
+<h6>Delete user page</h6>
+<span>Please indicate the index of the user in the list you want to delete:</span>
+
+@using (@Html.BeginForm())
+{
+
+@Html.TextBox("index")
+
+<button type="submit">Delete</button>
+}
+
+@await Html.PartialAsync("_GoBack")
+
+

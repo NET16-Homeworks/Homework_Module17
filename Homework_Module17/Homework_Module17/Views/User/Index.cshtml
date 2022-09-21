@@ -1,0 +1,19 @@
+﻿
+@model List<UserViewModel>
+
+    @{
+        ViewBag.Title = "Get users with Index method";
+    }
+    <h4>Get Users field (index action) </h4>
+
+        @foreach (var user in Model)
+        {
+            <ul>
+                <li> @("Username: " + user.Name + " Sex: " + user.sex + " Country: " + user.Country + " Married: " + user.IsMarried)
+                </li>
+            </ul>
+        }
+        <p>
+        @Html.ActionLink("Add User", "AddUser")
+        </p>
+        @Html.ActionLink("Get User(per its index)", "GetUser")
