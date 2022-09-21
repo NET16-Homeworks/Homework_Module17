@@ -1,3 +1,6 @@
+using Homework_Module17.Models;
+using Homework_Module17.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
