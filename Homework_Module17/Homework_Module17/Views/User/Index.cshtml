@@ -1,0 +1,12 @@
+﻿@model List<UserViewModel>;
+
+@{
+    ViewData["Title"] = "All Users";
+}
+<h1>List of All Users</h1>
+
+<ul>
+    @foreach(var user in Model){
+        @: <li>@($"Name: {user.Name}, Sex: {user.Sex}, Country: {user.Country}, IsMarried: {user.IsMarried}")</li>
+    }
+</ul>

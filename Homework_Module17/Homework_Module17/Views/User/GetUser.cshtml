@@ -1,0 +1,8 @@
+﻿@{
+    ViewBag.Title = "First User";
+}
+
+@await Component.InvokeAsync("GetUser")
+
+<br>
+@Html.Partial("_GoBack")

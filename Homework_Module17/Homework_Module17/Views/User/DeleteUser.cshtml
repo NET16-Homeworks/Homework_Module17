@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "DeleteUser";
+}
+
+@using (Html.BeginForm(FormMethod.Post))
+{
+    <p>Введите номер юзера для удаления:</p>
+    @Html.TextBox("index")
+    <button type="submit">Delete</button>
+}
+<br>
+
+@Html.Partial("_GoBack")
