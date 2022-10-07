@@ -23,9 +23,6 @@ public class UserController : Controller
         return View();
     }
 
-    //SelectList books = new SelectList(db.Books, "Author", "Name");
-    //ViewBag.Books = books;
-
     [HttpPost]
     public IActionResult AddUser(UserViewModel userViewModel)
     {
@@ -39,7 +36,7 @@ public class UserController : Controller
             try
             {
                 if (
-                    (String.IsNullOrEmpty(userViewModel.Name)) | (String.IsNullOrEmpty(userViewModel.Country)) |
+                    (String.IsNullOrEmpty(userViewModel.Name)) || (String.IsNullOrEmpty(userViewModel.Country)) |
                     (String.IsNullOrEmpty(Convert.ToString(userViewModel.Sex)))
                    )
                 {
@@ -54,9 +51,7 @@ public class UserController : Controller
                 return RedirectToAction("ErrorMessage");
             }
         }
-        //Response.Redirect("~/User/AddUser");
         return RedirectToAction("UserView");
-        //return Content($"{userViewModel.Name} - {userViewModel.Country} - {userViewModel.Sex} - {userViewModel.IsMarried}");
     }
 
     public ActionResult _GoBack()

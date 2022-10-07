@@ -5,15 +5,14 @@ namespace Homework_Module17.Services
 {
     public class UserService
     {
-        public UserService()
+        static UserService()
         {
             IniUsers();
         }
 
-        public static List<UserViewModel> Users = new List<UserViewModel>(); 
+        public static List<UserViewModel> Users = new List<UserViewModel>();
 
-        //public void UsersStatic
-        protected void IniUsers()
+        protected static void IniUsers()
         {
             var users = Users;
             users.Add(new UserViewModel() { Country = Data.HelpData.ListCountry[0], 

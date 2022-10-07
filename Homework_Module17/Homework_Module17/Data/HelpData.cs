@@ -10,9 +10,7 @@
     };
         public enum Sex
         {
-            //[Display(Name = "Man")]
             Man,
-            //[Display(Name = "Woman")]
             Woman
         }
 
