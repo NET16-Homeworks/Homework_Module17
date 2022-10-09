@@ -1,0 +1,34 @@
+﻿@model List<UserViewModel>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+    ViewData["Title"] = "All users";
+}
+
+<ul>
+    @{
+        foreach(var user in Model)
+        {
+                @*var _IsMarried = user.IsMarried;*@
+            string sIsMarried = "Yes";
+            if (!user.IsMarried) sIsMarried = "No";
+                <li>@("Name: "+user.Name+"; Country: "+user.Country+"; Sex: "+user.Sex+"; IsMarried:"+sIsMarried)</li> 
+        } 
+    <div class="text-Left">
+        @*<p>Add <a href="~/User/AddUser"> New User </a>.</p>*@
+        Add @Html.ActionLink("New User", "AddUser");
+    </div>
+
+    <div class="text-Left">
+        User @Html.ActionLink("Info", "GetUser");
+    </div>
+
+    <div class="text-Left">
+       Delete @Html.ActionLink("user from list", "DeleteUser");
+    </div>
+    }
+
+</ul>
+
