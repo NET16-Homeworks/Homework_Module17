@@ -1,0 +1,11 @@
+﻿@using Homework_Module17.Services
+
+@{
+    ViewData["Title"] = "User Add Page";
+}
+
+@await Component.InvokeAsync("GetUser")
+
+<div class="text-center">
+    @Html.Partial("_GoBack")
+</div>

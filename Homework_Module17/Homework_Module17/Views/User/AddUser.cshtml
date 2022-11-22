@@ -1,0 +1,43 @@
+﻿@using Homework_Module17.Services
+
+@{
+    ViewData["Title"] = "User Add Page";
+}
+
+<div class="text">
+    <h3 class="justify-content-around">Enter new user information:</h3>
+    <div class="text-body">
+        <form method="post">
+            <p>
+                <p>Name: </p>
+                <input name = "Name"/>
+            </p>
+            <p>
+                <label for="Sex">Enter sex: </label>
+                <select name="Sex">
+                    <option type="number" value="0">Man</option>
+                    <option value="1">Woman</option>
+                </select>
+            </p>
+            <p>
+                <label for="Country">Enter user country: </label>
+                <select name="Country">
+                    <option value="Belarus">Belarus</option>
+                    <option value="Ukraine">Ukraine</option>
+                    <option value="Poland">Poland</option>
+                </select>
+            </p>
+            <p>
+                <div>
+                    <input type="checkbox" name="actionIsMarried" value="true">
+                    <label for="scales">Is this user married?</label>
+                </div>
+            </p>
+            <p>
+                <input type="submit" value="Send" />
+            </p>
+        </form>
+        
+    </div>
+    @Html.Partial("_GoBack")
+</div>
