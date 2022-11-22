@@ -1,0 +1,17 @@
+﻿@using Homework_Module17.Services
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to User page!</h1>
+    <h3 class="justify-content-around">Users information:</h3>
+    <div class="text-body">
+        @foreach (var user in UserServices.users)
+        {
+            <p>Name: "@user.Name", sex: "@user.Sex", country: "@user.Country", married: "@user.isMarried"</p>
+        }
+        <p>Do you want to <a class="link-dark" asp-area="" asp-controller="User" asp-action="AddUser">Add new User</a>?</p>
+    </div>
+</div>
